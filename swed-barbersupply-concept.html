@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swed BarberSupply — Instruments for the Trade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   SWED BARBERSUPPLY — DESIGN TOKENS
+   Display: Libre Caslon Display — heritage, editorial, cut with intent
+   Text serif: Libre Caslon Text (italic) — for quotes / accents
+   Body/UI: Inter — quiet, precise
+   Utility: IBM Plex Mono — spec sheets, SKUs, coordinates
+   Palette: cool Scandinavian stone + graphite + aged brass
+   ============================================================ */
+:root{
+  --paper:      #E9E6DE;   /* stone paper — main ground */
+  --paper-2:    #F4F2EC;   /* lighter panel */
+  --paper-3:    #DEDAD0;   /* deeper stone for rules/hover */
+  --ink:        #17181A;   /* graphite black — primary text & dark ground */
+  --ink-2:      #26282B;   /* lifted graphite panel */
+  --steel:      #545B62;   /* cool steel — secondary text on paper */
+  --steel-l:    #9AA1A6;   /* faint steel — captions on dark */
+  --brass:      #8A6D3B;   /* aged brass accent — on paper */
+  --brass-light:#CBA96B;   /* brass highlight — on dark */
+  --line:       rgba(23,24,26,0.14);
+  --line-dark:  rgba(233,230,222,0.16);
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Inter',sans-serif; font-size:16px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+h1,h2,h3,h4{ margin:0; font-weight:400; }
+p{ margin:0; }
+.serif{ font-family:'Libre Caslon Display',serif; }
+.serif-i{ font-family:'Libre Caslon Text',serif; font-style:italic; }
+.mono{ font-family:'IBM Plex Mono',monospace; }
+
+.wrap{ max-width:1360px; margin:0 auto; padding:0 48px; }
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--brass); display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{ content:''; width:22px; height:1px; background:var(--brass); display:inline-block; }
+.rule{ height:1px; background:var(--line); border:0; margin:0; }
+.rule-dark{ height:1px; background:var(--line-dark); border:0; margin:0; }
+
+::selection{ background:var(--ink); color:var(--paper-2); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
+/* reveal-on-scroll */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in{ opacity:1; transform:translateY(0); }
+.reveal-line{ stroke-dasharray:var(--len,400); stroke-dashoffset:var(--len,400); transition:stroke-dashoffset 1.6s var(--ease); }
+.reveal-line.in{ stroke-dashoffset:0; }
+
+/* ============================= HEADER ============================= */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(233,230,222,0.86); backdrop-filter:blur(10px) saturate(1.1);
+  border-bottom:1px solid var(--line); transition:padding .4s var(--ease), background .4s;
+}
+.nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:26px 48px; transition:padding .4s var(--ease); max-width:1360px; margin:0 auto; }
+header.shrink .nav-inner{ padding:15px 48px; }
+.brand-mark{ display:flex; align-items:baseline; gap:9px; }
+.brand-mark .sw{ font-family:'Libre Caslon Display',serif; font-size:22px; letter-spacing:.01em; }
+.brand-mark .sub{ font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.16em; color:var(--brass); text-transform:uppercase; }
+nav.primary{ display:flex; gap:34px; }
+nav.primary a{
+  font-size:13px; letter-spacing:.03em; color:var(--ink); position:relative; padding:4px 0;
+}
+nav.primary a::after{
+  content:''; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--brass);
+  transition:right .35s var(--ease);
+}
+nav.primary a:hover::after{ right:0; }
+.nav-right{ display:flex; align-items:center; gap:22px; }
+.btn-line{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  border:1px solid var(--ink); padding:10px 18px; transition:background .3s, color .3s; white-space:nowrap;
+}
+.btn-line:hover{ background:var(--ink); color:var(--paper-2); }
+.icon-btn{ width:18px; height:18px; opacity:.75; cursor:pointer; }
+@media (max-width:980px){
+  nav.primary{ display:none; }
+  .nav-inner{ padding:20px 24px; }
+  .wrap{ padding:0 24px; }
+}
+
+/* ============================= HERO ============================= */
+.hero{
+  min-height:100vh; display:flex; flex-direction:column; justify-content:center;
+  position:relative; padding:150px 48px 90px; overflow:hidden;
+}
+.hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:end; }
+.hero h1{
+  font-size:clamp(46px,6.4vw,96px); line-height:.98; letter-spacing:-.01em; max-width:820px;
+}
+.hero h1 em{ font-style:italic; color:var(--brass); }
+.hero-sub{ max-width:400px; color:var(--steel); font-size:16.5px; margin-top:26px; }
+.hero-cta{ display:flex; gap:16px; margin-top:40px; flex-wrap:wrap; }
+.btn-solid{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  background:var(--ink); color:var(--paper-2); padding:15px 26px; border:1px solid var(--ink); transition:.3s;
+  display:inline-flex; align-items:center; gap:10px;
+}
+.btn-solid:hover{ background:transparent; color:var(--ink); }
+.hero-figure{ position:relative; align-self:stretch; display:flex; align-items:flex-end; justify-content:center; }
+.hero-figure svg{ width:100%; max-width:420px; height:auto; }
+.hero-meta{
+  display:flex; justify-content:space-between; margin-top:110px; padding-top:22px; border-top:1px solid var(--line);
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--steel); letter-spacing:.04em;
+}
+@media (max-width:980px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-figure{ order:-1; margin-bottom:20px; }
+  .hero-meta{ flex-direction:column; gap:8px; margin-top:60px; }
+}
+
+/* ============================= MARQUEE ============================= */
+.marquee-strip{ background:var(--ink); color:var(--paper); overflow:hidden; padding:20px 0; border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark); }
+.marquee-track{ display:flex; width:max-content; animation:scroll-left 42s linear infinite; }
+.marquee-track span{
+  font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.16em; text-transform:uppercase;
+  padding:0 40px; color:var(--steel-l); display:flex; align-items:center; gap:40px; white-space:nowrap;
+}
+.marquee-track span b{ color:var(--paper); font-weight:500; }
+@keyframes scroll-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+/* ============================= SECTION HEADERS ============================= */
+.section{ padding:130px 0; position:relative; }
+.section-head{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:end; margin-bottom:70px; }
+.section-head h2{ font-size:clamp(32px,4vw,52px); line-height:1.05; margin-top:16px; }
+.section-head .desc{ color:var(--steel); font-size:15.5px; max-width:400px; justify-self:end; }
+@media (max-width:900px){ .section-head{ grid-template-columns:1fr; } .section-head .desc{ justify-self:start; } .section{padding:90px 0;} }
+
+/* ============================= CATALOGUE / LEDGER ============================= */
+.ledger-row{
+  display:grid; grid-template-columns:70px 1fr 260px 200px 40px; align-items:center;
+  border-top:1px solid var(--line); padding:34px 0; cursor:pointer; position:relative; overflow:hidden;
+  transition:padding .35s var(--ease);
+}
+.ledger-row:last-child{ border-bottom:1px solid var(--line); }
+.ledger-num{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--brass); }
+.ledger-title{ font-family:'Libre Caslon Display',serif; font-size:clamp(26px,3vw,40px); transition:transform .4s var(--ease); }
+.ledger-sub{ color:var(--steel); font-size:14px; }
+.ledger-count{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--steel); letter-spacing:.05em; text-align:right; }
+.ledger-arrow{ width:22px; height:22px; transition:transform .4s var(--ease); justify-self:end; }
+.ledger-row:hover{ padding-left:14px; }
+.ledger-row:hover .ledger-title{ transform:translateX(6px); color:var(--brass); }
+.ledger-row:hover .ledger-arrow{ transform:translate(6px,-6px); }
+.ledger-row::before{
+  content:''; position:absolute; inset:0; background:var(--paper-3); transform:scaleX(0); transform-origin:left;
+  transition:transform .45s var(--ease); z-index:-1;
+}
+.ledger-row:hover::before{ transform:scaleX(1); }
+@media (max-width:900px){
+  .ledger-row{ grid-template-columns:36px 1fr 30px; row-gap:6px; }
+  .ledger-sub, .ledger-count{ display:none; }
+}
+
+/* ============================= FEATURED / DEPARTMENTS ============================= */
+.dept-scroller{ display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; padding-bottom:6px; }
+.dept-scroller::-webkit-scrollbar{ display:none; }
+.dept-card{
+  flex:0 0 340px; background:var(--paper-2); padding:36px 32px; min-height:420px;
+  display:flex; flex-direction:column; justify-content:space-between; position:relative;
+  border-right:1px solid var(--line);
+}
+.dept-card .tag{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--brass); }
+.dept-card h3{ font-family:'Libre Caslon Display',serif; font-size:28px; margin-top:60px; line-height:1.12; }
+.dept-card p{ color:var(--steel); font-size:13.5px; margin-top:14px; }
+.dept-card .icon{ position:absolute; top:32px; right:32px; width:44px; height:44px; opacity:.85; }
+.dept-card .foot{ display:flex; justify-content:space-between; align-items:center; margin-top:30px; border-top:1px solid var(--line); padding-top:16px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--steel); }
+
+/* ============================= ATELIER / ABOUT SPLIT ============================= */
+.split{ display:grid; grid-template-columns:.9fr 1.1fr; gap:0; }
+.split .visual{
+  background:var(--ink); min-height:560px; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;
+}
+.split .visual svg{ width:78%; }
+.split .copy{ padding:70px 70px 40px 90px; display:flex; flex-direction:column; justify-content:center; }
+.split .copy h2{ font-size:clamp(30px,3.6vw,46px); line-height:1.1; margin:18px 0 26px; }
+.split .copy p{ color:var(--steel); font-size:15.5px; max-width:460px; margin-bottom:16px; }
+.stat-row{ display:flex; gap:50px; margin-top:36px; }
+.stat b{ font-family:'Libre Caslon Display',serif; font-size:34px; display:block; }
+.stat span{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--steel); letter-spacing:.06em; text-transform:uppercase; }
+@media (max-width:980px){
+  .split{ grid-template-columns:1fr; }
+  .split .copy{ padding:50px 24px; }
+  .split .visual{ min-height:360px; }
+}
+
+/* ============================= BRAND WALL ============================= */
+.brand-wall{ display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+.brand-cell{
+  border-right:1px solid var(--line); border-bottom:1px solid var(--line); aspect-ratio:2/1;
+  display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+}
+.brand-cell span{ font-family:'Libre Caslon Display',serif; font-size:22px; letter-spacing:.02em; transition:transform .4s var(--ease), color .3s; z-index:1; }
+.brand-cell::before{ content:''; position:absolute; inset:0; background:var(--ink); transform:translateY(101%); transition:transform .4s var(--ease); }
+.brand-cell:hover::before{ transform:translateY(0); }
+.brand-cell:hover span{ color:var(--paper); transform:scale(1.06); }
+@media (max-width:900px){ .brand-wall{ grid-template-columns:repeat(2,1fr); } }
+
+/* ============================= PILLARS ============================= */
+.pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); }
+.pillar{ background:var(--paper); padding:48px 40px; }
+.pillar .num{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--brass); }
+.pillar svg{ width:34px; height:34px; margin:26px 0 22px; }
+.pillar h4{ font-family:'Libre Caslon Display',serif; font-size:21px; margin-bottom:10px; }
+.pillar p{ color:var(--steel); font-size:14px; }
+@media (max-width:900px){ .pillars{ grid-template-columns:1fr; } }
+
+/* ============================= TESTIMONIALS ============================= */
+.testi-wrap{ background:var(--ink); color:var(--paper); padding:140px 0; }
+.testi-inner{ max-width:820px; margin:0 auto; text-align:center; padding:0 24px; }
+.quote-mark{ font-family:'Libre Caslon Display',serif; font-size:80px; color:var(--brass-light); line-height:1; }
+.testi-inner blockquote{
+  font-family:'Libre Caslon Text',serif; font-style:italic; font-size:clamp(22px,2.6vw,32px); line-height:1.4; margin:20px 0 30px;
+}
+.testi-cite{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; color:var(--steel-l); text-transform:uppercase; }
+.testi-dots{ display:flex; justify-content:center; gap:10px; margin-top:44px; }
+.testi-dots span{ width:6px; height:6px; border-radius:50%; background:var(--line-dark); cursor:pointer; }
+.testi-dots span.active{ background:var(--brass-light); }
+
+/* ============================= TRADE CTA ============================= */
+.trade{ padding:130px 0; }
+.trade-box{
+  background:var(--paper-2); border:1px solid var(--line); padding:80px 70px; position:relative; overflow:hidden;
+  display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center;
+}
+.trade-box h2{ font-size:clamp(30px,3.6vw,44px); line-height:1.08; }
+.trade-box p{ color:var(--steel); margin-top:18px; max-width:420px; }
+.trade-form{ display:flex; flex-direction:column; gap:14px; }
+.trade-form input{
+  background:transparent; border:0; border-bottom:1px solid var(--line); padding:14px 2px; font-family:'Inter',sans-serif; font-size:15px;
+  outline:none; color:var(--ink); transition:border-color .3s;
+}
+.trade-form input:focus{ border-color:var(--ink); }
+.trade-form input::placeholder{ color:var(--steel); }
+@media (max-width:900px){ .trade-box{ grid-template-columns:1fr; padding:50px 28px; } }
+
+/* ============================= FOOTER ============================= */
+footer{ background:var(--ink); color:var(--paper); padding:100px 0 40px; }
+.foot-grid{ display:grid; grid-template-columns:1.4fr .8fr .8fr .8fr 1fr; gap:40px; }
+.foot-grid h5{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--brass-light); margin-bottom:20px; }
+.foot-grid a, .foot-grid p{ display:block; color:var(--steel-l); font-size:13.5px; margin-bottom:11px; transition:color .25s; }
+.foot-grid a:hover{ color:var(--paper); }
+.foot-logo{ font-family:'Libre Caslon Display',serif; font-size:26px; margin-bottom:16px; }
+.foot-bottom{ display:flex; justify-content:space-between; margin-top:80px; padding-top:26px; border-top:1px solid var(--line-dark); font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--steel-l); letter-spacing:.05em; }
+@media (max-width:900px){ .foot-grid{ grid-template-columns:1fr 1fr; } .foot-bottom{ flex-direction:column; gap:10px; } }
+
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="nav-inner">
+    <a href="#" class="brand-mark">
+      <span class="sw serif">Swed BarberSupply</span>
+      <span class="sub">Est. Gothenburg</span>
+    </a>
+    <nav class="primary">
+      <a href="#catalogue">Elektronik</a>
+      <a href="#catalogue">Saxar &amp; Rakning</a>
+      <a href="#catalogue">Salongtillbehör</a>
+      <a href="#catalogue">Produkter</a>
+      <a href="#brands">Brands</a>
+      <a href="#deals">Hot Deals</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn-line" href="#trade">Trade Portal</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= HERO ============================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow reveal">Wholesale Barber &amp; Salon Supply — Gothenburg, Sweden</div>
+      <h1 class="serif reveal">The instruments behind <em>Sweden's</em> sharpest barbershops.</h1>
+      <p class="hero-sub reveal">Swed BarberSupply curates and distributes the clippers, steel, and finishing products that professional barbers build their craft on — sourced with discipline, held to a standard, shipped without excuses.</p>
+      <div class="hero-cta reveal">
+        <a href="#catalogue" class="btn-solid">View the Catalogue →</a>
+        <a href="#trade" class="btn-line">Apply for a Trade Account</a>
+      </div>
+    </div>
+    <div class="hero-figure reveal">
+      <!-- blueprint scissors -->
+      <svg viewBox="0 0 300 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#17181A" stroke-width="1.1">
+          <circle class="reveal-line" style="--len:170" cx="95" cy="330" r="27"/>
+          <circle class="reveal-line" style="--len:170" cx="205" cy="330" r="27"/>
+          <path class="reveal-line" style="--len:520" d="M95 303 L215 40" />
+          <path class="reveal-line" style="--len:520" d="M205 303 L85 40" />
+          <path class="reveal-line" style="--len:60" d="M150 168 L150 178" stroke-width="2"/>
+          <circle class="reveal-line" style="--len:40" cx="150" cy="172" r="6"/>
+        </g>
+        <g stroke="#8A6D3B" stroke-width="1" stroke-dasharray="2 4" opacity=".6">
+          <line x1="20" y1="330" x2="70" y2="330"/>
+          <line x1="230" y1="330" x2="280" y2="330"/>
+        </g>
+        <text x="20" y="360" font-family="IBM Plex Mono" font-size="9" fill="#8A6D3B">FIG. 01 — SHEAR, 6.0"</text>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap hero-meta reveal">
+    <span>Sofierogatan 3A, 412 51 Göteborg</span>
+    <span>Trade only · Verified salons &amp; barbershops</span>
+    <span>Nordic dispatch, 24–48h</span>
+  </div>
+</section>
+
+<!-- ============================= MARQUEE ============================= -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>
+      <b>JRL</b> · <b>WAHL</b> · <b>ANDIS</b> · <b>BABYLISS</b> · <b>REDONE</b> · <b>WELLA</b> · <b>MRD</b> · <b>HAIRCOMPANY</b> · <b>PANORAMA</b>
+    </span>
+    <span>
+      <b>JRL</b> · <b>WAHL</b> · <b>ANDIS</b> · <b>BABYLISS</b> · <b>REDONE</b> · <b>WELLA</b> · <b>MRD</b> · <b>HAIRCOMPANY</b> · <b>PANORAMA</b>
+    </span>
+  </div>
+</div>
+
+<!-- ============================= CATALOGUE LEDGER ============================= -->
+<section class="section" id="catalogue">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">The Catalogue</div>
+        <h2 class="serif reveal">Five departments. <br>No filler.</h2>
+      </div>
+      <p class="desc reveal">Every category exists because working barbers asked for it — organised the way a shop floor thinks, not the way a spreadsheet does.</p>
+    </div>
+
+    <div class="ledger reveal">
+      <div class="ledger-row" onclick="location.hash='#'">
+        <span class="ledger-num mono">01</span>
+        <span class="ledger-title serif">Elektronik</span>
+        <span class="ledger-sub">Clippers · Shavers · Combos · Blade Heads · Lighting</span>
+        <span class="ledger-count mono">128 ARTICLES</span>
+        <svg class="ledger-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 18L18 6M18 6H8M18 6V16"/></svg>
+      </div>
+      <div class="ledger-row" onclick="location.hash='#'">
+        <span class="ledger-num mono">02</span>
+        <span class="ledger-title serif">Saxar &amp; Rakning</span>
+        <span class="ledger-sub">Right- &amp; left-handed shears · Sets · Shavettes · Razors · Tools</span>
+        <span class="ledger-count mono">86 ARTICLES</span>
+        <svg class="ledger-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 18L18 6M18 6H8M18 6V16"/></svg>
+      </div>
+      <div class="ledger-row" onclick="location.hash='#'">
+        <span class="ledger-num mono">03</span>
+        <span class="ledger-title serif">Salongtillbehör</span>
+        <span class="ledger-sub">Brushes · Combs · Oils &amp; cleaning · Workwear · Capes · Mirrors</span>
+        <span class="ledger-count mono">154 ARTICLES</span>
+        <svg class="ledger-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 18L18 6M18 6H8M18 6V16"/></svg>
+      </div>
+      <div class="ledger-row" onclick="location.hash='#'">
+        <span class="ledger-num mono">04</span>
+        <span class="ledger-title serif">Produkter</span>
+        <span class="ledger-sub">Wax · Clay · Gel · Sprays · Beard &amp; enhancement · Care</span>
+        <span class="ledger-count mono">211 ARTICLES</span>
+        <svg class="ledger-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 18L18 6M18 6H8M18 6V16"/></svg>
+      </div>
+      <div class="ledger-row" id="deals" onclick="location.hash='#'">
+        <span class="ledger-num mono">05</span>
+        <span class="ledger-title serif">Hot Deals</span>
+        <span class="ledger-sub">Rotating outlet pricing on select brands, while stock lasts</span>
+        <span class="ledger-count mono">LIVE</span>
+        <svg class="ledger-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 18L18 6M18 6H8M18 6V16"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= DEPARTMENT CARDS / BESTSELLERS ============================= -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">Bästsäljare</div>
+        <h2 class="serif reveal">What the floor reaches for first.</h2>
+      </div>
+      <p class="desc reveal">A rotating shortlist, drawn from real reorder frequency across our trade accounts.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="dept-scroller reveal">
+      <div class="dept-card">
+        <span class="icon">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#8A6D3B" stroke-width="1"><rect x="8" y="6" width="28" height="32" rx="1"/><line x1="8" y1="16" x2="36" y2="16"/><line x1="14" y1="10" x2="14" y2="14"/></svg>
+        </span>
+        <span class="tag">Elektronik</span>
+        <h3>JRL FreeStyle FX2 Clipper</h3>
+        <p>Brushless motor, magnetic torque, the shop's most requested fade tool this season.</p>
+        <div class="foot"><span>JRL</span><span>SKU 4471</span></div>
+      </div>
+      <div class="dept-card">
+        <span class="icon">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#8A6D3B" stroke-width="1"><circle cx="14" cy="32" r="6"/><circle cx="32" cy="32" r="6"/><path d="M14 27 L34 8 M32 27 L12 8"/></svg>
+        </span>
+        <span class="tag">Saxar</span>
+        <h3>Kamisori 6.0" Offset Shear</h3>
+        <p>Japanese steel, cobalt edge, hand-honed — our best-selling right-handed cutting shear.</p>
+        <div class="foot"><span>MRD</span><span>SKU 2098</span></div>
+      </div>
+      <div class="dept-card">
+        <span class="icon">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#8A6D3B" stroke-width="1"><rect x="10" y="10" width="24" height="24" rx="12"/><path d="M17 22h10M22 17v10"/></svg>
+        </span>
+        <span class="tag">Produkter</span>
+        <h3>SwedHair Matte Clay 100ml</h3>
+        <p>Strong hold, zero shine — reordered more than any product in the haircare range.</p>
+        <div class="foot"><span>SwedHair</span><span>SKU 1183</span></div>
+      </div>
+      <div class="dept-card">
+        <span class="icon">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#8A6D3B" stroke-width="1"><path d="M8 34 L22 10 L36 34 Z"/><line x1="8" y1="34" x2="36" y2="34"/></svg>
+        </span>
+        <span class="tag">Salongtillbehör</span>
+        <h3>Carbon Barber Cape, Charcoal</h3>
+        <p>Water-resistant weave, weighted hem — the floor's standard-issue cape.</p>
+        <div class="foot"><span>SB Studio</span><span>SKU 3390</span></div>
+      </div>
+      <div class="dept-card">
+        <span class="icon">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#8A6D3B" stroke-width="1"><rect x="12" y="8" width="20" height="28" rx="3"/><line x1="12" y1="16" x2="32" y2="16"/></svg>
+        </span>
+        <span class="tag">Elektronik</span>
+        <h3>Andis T-Outliner Blade Head</h3>
+        <p>Deep-tooth zero-gap replacement head — a shop-floor staple, restocked weekly.</p>
+        <div class="foot"><span>Andis</span><span>SKU 5502</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= ATELIER / ABOUT ============================= -->
+<div class="split reveal">
+  <div class="visual">
+    <svg viewBox="0 0 300 300" fill="none">
+      <g stroke="#CBA96B" stroke-width="1">
+        <circle class="reveal-line" style="--len:340" cx="150" cy="150" r="90"/>
+        <circle class="reveal-line" style="--len:200" cx="150" cy="150" r="52"/>
+        <path class="reveal-line" style="--len:260" d="M150 60 V240 M60 150 H240" stroke-dasharray="3 6" opacity=".5"/>
+      </g>
+      <text x="88" y="153" font-family="IBM Plex Mono" font-size="9" fill="#9AA1A6">GÖTEBORG · SE</text>
+    </svg>
+  </div>
+  <div class="copy">
+    <div class="eyebrow">The Atelier — Sofierogatan 3A</div>
+    <h2 class="serif">Built by barbers,<br>run like a workshop.</h2>
+    <p>Swed BarberSupply began the way most good supply houses do — with barbers who were tired of choosing between good tools and fast delivery. We now hold and inspect every SKU ourselves from our floor in Gothenburg before it reaches a shop chair.</p>
+    <p>No dropshipping, no anonymous resellers. Every brand on our floor was chosen because someone here has used it under a real client, on a real Saturday.</p>
+    <div class="stat-row">
+      <div class="stat"><b>9</b><span>Brands curated</span></div>
+      <div class="stat"><b>24–48h</b><span>Nordic dispatch</span></div>
+      <div class="stat"><b>1</b><span>Showroom, Gothenburg</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= BRAND WALL ============================= -->
+<section class="section" id="brands">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">Represented Brands</div>
+        <h2 class="serif reveal">A short list, on purpose.</h2>
+      </div>
+      <p class="desc reveal">We'd rather stock nine brands properly than ninety brands thinly. Each name below is warehoused, tested, and warrantied by us directly.</p>
+    </div>
+  </div>
+  <div class="brand-wall reveal">
+    <div class="brand-cell"><span>JRL</span></div>
+    <div class="brand-cell"><span>Wahl</span></div>
+    <div class="brand-cell"><span>Andis</span></div>
+    <div class="brand-cell"><span>BaByliss</span></div>
+    <div class="brand-cell"><span>RedOne</span></div>
+    <div class="brand-cell"><span>Wella</span></div>
+    <div class="brand-cell"><span>MRD</span></div>
+    <div class="brand-cell"><span>HairCompany</span></div>
+  </div>
+</section>
+
+<!-- ============================= PILLARS ============================= -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="pillars reveal">
+      <div class="pillar">
+        <span class="num mono">01</span>
+        <svg viewBox="0 0 34 34" fill="none" stroke="#17181A" stroke-width="1"><rect x="5" y="5" width="24" height="24" rx="2"/><path d="M11 17l4 4 8-9"/></svg>
+        <h4>Verified stock only</h4>
+        <p>Every listed article sits physically in our Gothenburg warehouse — no phantom inventory, no backorders dressed up as in-stock.</p>
+      </div>
+      <div class="pillar">
+        <span class="num mono">02</span>
+        <svg viewBox="0 0 34 34" fill="none" stroke="#17181A" stroke-width="1"><path d="M4 24h20V10H4z"/><path d="M24 14h4l2 4v6h-6"/><circle cx="10" cy="27" r="2.5"/><circle cx="24" cy="27" r="2.5"/></svg>
+        <h4>Nordic-wide dispatch</h4>
+        <p>Orders placed before 2pm leave same day. Most Swedish salons see their box within 24 hours.</p>
+      </div>
+      <div class="pillar">
+        <span class="num mono">03</span>
+        <svg viewBox="0 0 34 34" fill="none" stroke="#17181A" stroke-width="1"><circle cx="17" cy="12" r="6"/><path d="M6 29c0-6 5-10 11-10s11 4 11 10"/></svg>
+        <h4>A named account manager</h4>
+        <p>Trade accounts get a direct line to one person here — not a ticket queue. Ask them anything, including what to skip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TESTIMONIALS ============================= -->
+<section class="testi-wrap">
+  <div class="testi-inner">
+    <span class="quote-mark serif">"</span>
+    <blockquote id="quoteText">We switched our entire chain's supply account to SB three years ago and haven't looked at another price list since. They tell you when something isn't worth buying — that's rare from a supplier.</blockquote>
+    <div class="testi-cite mono" id="quoteCite">— Owner, five-chair barbershop, Malmö</div>
+    <div class="testi-dots">
+      <span class="active" onclick="setQuote(0)"></span>
+      <span onclick="setQuote(1)"></span>
+      <span onclick="setQuote(2)"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TRADE CTA ============================= -->
+<section class="trade" id="trade">
+  <div class="wrap">
+    <div class="trade-box reveal">
+      <div>
+        <div class="eyebrow">Trade Accounts</div>
+        <h2 class="serif">Get shop-floor pricing, direct.</h2>
+        <p>Trade accounts are free to open and reserved for licensed barbers, salons, and schools. Apply once — we verify and reply within one business day.</p>
+      </div>
+      <form class="trade-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Request received →';">
+        <input type="text" placeholder="Salon or barbershop name" required>
+        <input type="email" placeholder="Work email" required>
+        <input type="text" placeholder="City" required>
+        <button type="submit" class="btn-solid" style="margin-top:8px; cursor:pointer; border:1px solid var(--ink);">Request Trade Access →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo serif">Swed BarberSupply</div>
+        <p style="max-width:260px;">Wholesale instruments and finishing products for professional barbers and salons, warehoused in Gothenburg.</p>
+      </div>
+      <div>
+        <h5>Catalogue</h5>
+        <a href="#catalogue">Elektronik</a>
+        <a href="#catalogue">Saxar &amp; Rakning</a>
+        <a href="#catalogue">Salongtillbehör</a>
+        <a href="#catalogue">Produkter</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#">About</a>
+        <a href="#">Testimonials</a>
+        <a href="#brands">Brands</a>
+        <a href="#deals">Hot Deals</a>
+      </div>
+      <div>
+        <h5>Trade</h5>
+        <a href="#trade">Open an account</a>
+        <a href="#">Shipping &amp; returns</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <p>Sofierogatan 3A<br>412 51 Göteborg</p>
+        <p>Mon–Fri, 09:00–17:00</p>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Swed BarberSupply</span>
+      <span>Privacy · Terms · Trade Terms</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// header shrink
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('shrink', window.scrollY > 40);
+});
+
+// reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold:.15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.querySelectorAll('.reveal-line').forEach(el => io.observe(el));
+
+// testimonials
+const quotes = [
+  { text:"We switched our entire chain's supply account to SB three years ago and haven't looked at another price list since. They tell you when something isn't worth buying — that's rare from a supplier.", cite:"— Owner, five-chair barbershop, Malmö" },
+  { text:"Same-day dispatch actually means same-day here. When a clipper dies on a Saturday morning, that turnaround matters more than any discount.", cite:"— Head barber, Stockholm" },
+  { text:"Our account manager talked us out of a slower-moving shampoo line and into the clay instead. Nobody does that unless they actually care what happens after checkout.", cite:"— Salon director, Uppsala" }
+];
+let qi = 0;
+function setQuote(i){
+  qi = i;
+  document.getElementById('quoteText').textContent = quotes[i].text;
+  document.getElementById('quoteCite').textContent = quotes[i].cite;
+  document.querySelectorAll('.testi-dots span').forEach((d,idx)=>d.classList.toggle('active', idx===i));
+}
+setInterval(()=>{ setQuote((qi+1)%quotes.length); }, 7000);
+</script>
+
+</body>
+</html>

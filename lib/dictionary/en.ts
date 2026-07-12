@@ -1,0 +1,229 @@
+export const en = {
+  meta: {
+    title: "Swed BarberSupply — Instruments for the Trade",
+    description:
+      "Wholesale instruments and finishing products for professional barbers and salons, warehoused in Gothenburg.",
+  },
+  header: {
+    brand: "Swed BarberSupply",
+    tagline: "Est. Gothenburg",
+    nav: {
+      elektronik: "Elektronik",
+      saxar: "Saxar & Rakning",
+      salong: "Salongtillbehör",
+      produkter: "Produkter",
+      brands: "Brands",
+      deals: "Hot Deals",
+    },
+    tradePortal: "Trade Portal",
+  },
+  hero: {
+    eyebrow: "Wholesale Barber & Salon Supply — Gothenburg, Sweden",
+    title: "The instruments behind",
+    titleEmphasis: "Sweden's",
+    titleEnd: "sharpest barbershops.",
+    subtitle:
+      "Swed BarberSupply curates and distributes the clippers, steel, and finishing products that professional barbers build their craft on — sourced with discipline, held to a standard, shipped without excuses.",
+    ctaCatalogue: "View the Catalogue →",
+    ctaTrade: "Apply for a Trade Account",
+    figCaption: 'FIG. 01 — SHEAR, 6.0"',
+    meta: {
+      address: "Sofierogatan 3A, 412 51 Göteborg",
+      trade: "Trade only · Verified salons & barbershops",
+      dispatch: "Nordic dispatch, 24–48h",
+    },
+  },
+  marquee: {
+    brands: [
+      "JRL",
+      "WAHL",
+      "ANDIS",
+      "BABYLISS",
+      "REDONE",
+      "WELLA",
+      "MRD",
+      "HAIRCOMPANY",
+      "PANORAMA",
+    ],
+  },
+  catalogue: {
+    eyebrow: "The Catalogue",
+    title: "Five departments.",
+    titleBreak: "No filler.",
+    desc: "Every category exists because working barbers asked for it — organised the way a shop floor thinks, not the way a spreadsheet does.",
+    rows: [
+      {
+        num: "01",
+        title: "Elektronik",
+        sub: "Clippers · Shavers · Combos · Blade Heads · Lighting",
+        count: "128 ARTICLES",
+      },
+      {
+        num: "02",
+        title: "Saxar & Rakning",
+        sub: "Right- & left-handed shears · Sets · Shavettes · Razors · Tools",
+        count: "86 ARTICLES",
+      },
+      {
+        num: "03",
+        title: "Salongtillbehör",
+        sub: "Brushes · Combs · Oils & cleaning · Workwear · Capes · Mirrors",
+        count: "154 ARTICLES",
+      },
+      {
+        num: "04",
+        title: "Produkter",
+        sub: "Wax · Clay · Gel · Sprays · Beard & enhancement · Care",
+        count: "211 ARTICLES",
+      },
+      {
+        num: "05",
+        title: "Hot Deals",
+        sub: "Rotating outlet pricing on select brands, while stock lasts",
+        count: "LIVE",
+      },
+    ],
+  },
+  bestsellers: {
+    eyebrow: "Bästsäljare",
+    title: "What the floor reaches for first.",
+    desc: "A rotating shortlist, drawn from real reorder frequency across our trade accounts.",
+    cards: [
+      {
+        tag: "Elektronik",
+        title: "JRL FreeStyle FX2 Clipper",
+        desc: "Brushless motor, magnetic torque, the shop's most requested fade tool this season.",
+        brand: "JRL",
+        sku: "SKU 4471",
+      },
+      {
+        tag: "Saxar",
+        title: 'Kamisori 6.0" Offset Shear',
+        desc: "Japanese steel, cobalt edge, hand-honed — our best-selling right-handed cutting shear.",
+        brand: "MRD",
+        sku: "SKU 2098",
+      },
+      {
+        tag: "Produkter",
+        title: "SwedHair Matte Clay 100ml",
+        desc: "Strong hold, zero shine — reordered more than any product in the haircare range.",
+        brand: "SwedHair",
+        sku: "SKU 1183",
+      },
+      {
+        tag: "Salongtillbehör",
+        title: "Carbon Barber Cape, Charcoal",
+        desc: "Water-resistant weave, weighted hem — the floor's standard-issue cape.",
+        brand: "SB Studio",
+        sku: "SKU 3390",
+      },
+      {
+        tag: "Elektronik",
+        title: "Andis T-Outliner Blade Head",
+        desc: "Deep-tooth zero-gap replacement head — a shop-floor staple, restocked weekly.",
+        brand: "Andis",
+        sku: "SKU 5502",
+      },
+    ],
+  },
+  atelier: {
+    eyebrow: "The Atelier — Sofierogatan 3A",
+    title: "Built by barbers,",
+    titleBreak: "run like a workshop.",
+    p1: "Swed BarberSupply began the way most good supply houses do — with barbers who were tired of choosing between good tools and fast delivery. We now hold and inspect every SKU ourselves from our floor in Gothenburg before it reaches a shop chair.",
+    p2: "No dropshipping, no anonymous resellers. Every brand on our floor was chosen because someone here has used it under a real client, on a real Saturday.",
+    locationLabel: "GÖTEBORG · SE",
+    stats: [
+      { value: "9", label: "Brands curated" },
+      { value: "24–48h", label: "Nordic dispatch" },
+      { value: "1", label: "Showroom, Gothenburg" },
+    ],
+  },
+  brands: {
+    eyebrow: "Represented Brands",
+    title: "A short list, on purpose.",
+    desc: "We'd rather stock nine brands properly than ninety brands thinly. Each name below is warehoused, tested, and warrantied by us directly.",
+    names: [
+      "JRL",
+      "Wahl",
+      "Andis",
+      "BaByliss",
+      "RedOne",
+      "Wella",
+      "MRD",
+      "HairCompany",
+    ],
+  },
+  pillars: {
+    items: [
+      {
+        num: "01",
+        title: "Verified stock only",
+        desc: "Every listed article sits physically in our Gothenburg warehouse — no phantom inventory, no backorders dressed up as in-stock.",
+      },
+      {
+        num: "02",
+        title: "Nordic-wide dispatch",
+        desc: "Orders placed before 2pm leave same day. Most Swedish salons see their box within 24 hours.",
+      },
+      {
+        num: "03",
+        title: "A named account manager",
+        desc: "Trade accounts get a direct line to one person here — not a ticket queue. Ask them anything, including what to skip.",
+      },
+    ],
+  },
+  testimonials: {
+    quotes: [
+      {
+        text: "We switched our entire chain's supply account to SB three years ago and haven't looked at another price list since. They tell you when something isn't worth buying — that's rare from a supplier.",
+        cite: "— Owner, five-chair barbershop, Malmö",
+      },
+      {
+        text: "Same-day dispatch actually means same-day here. When a clipper dies on a Saturday morning, that turnaround matters more than any discount.",
+        cite: "— Head barber, Stockholm",
+      },
+      {
+        text: "Our account manager talked us out of a slower-moving shampoo line and into the clay instead. Nobody does that unless they actually care what happens after checkout.",
+        cite: "— Salon director, Uppsala",
+      },
+    ],
+  },
+  trade: {
+    eyebrow: "Trade Accounts",
+    title: "Get shop-floor pricing, direct.",
+    desc: "Trade accounts are free to open and reserved for licensed barbers, salons, and schools. Apply once — we verify and reply within one business day.",
+    form: {
+      salon: "Salon or barbershop name",
+      email: "Work email",
+      city: "City",
+      submit: "Request Trade Access →",
+      received: "Request received →",
+    },
+  },
+  footer: {
+    brand: "Swed BarberSupply",
+    tagline:
+      "Wholesale instruments and finishing products for professional barbers and salons, warehoused in Gothenburg.",
+    catalogue: "Catalogue",
+    company: "Company",
+    trade: "Trade",
+    visit: "Visit",
+    links: {
+      about: "About",
+      testimonials: "Testimonials",
+      openAccount: "Open an account",
+      shipping: "Shipping & returns",
+      contact: "Contact",
+      instagram: "Instagram",
+      facebook: "Facebook",
+    },
+    address: "Sofierogatan 3A",
+    city: "412 51 Göteborg",
+    hours: "Mon–Fri, 09:00–17:00",
+    copyright: "© 2026 Swed BarberSupply",
+    legal: "Privacy · Terms · Trade Terms",
+  },
+};
+
+export type Dictionary = typeof en;

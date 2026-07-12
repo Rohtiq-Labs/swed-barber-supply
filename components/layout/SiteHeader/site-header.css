@@ -1,0 +1,91 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(233, 230, 222, 0.86);
+  backdrop-filter: blur(10px) saturate(1.1);
+  border-bottom: 1px solid var(--line);
+  transition:
+    padding 0.4s var(--ease),
+    background 0.4s;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 48px;
+  transition: padding 0.4s var(--ease);
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+header.shrink .nav-inner {
+  padding: 15px 48px;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+
+.brand-mark .sw {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  letter-spacing: 0.01em;
+}
+
+.brand-mark .sub {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  color: var(--brass);
+  text-transform: uppercase;
+}
+
+nav.primary {
+  display: flex;
+  gap: 34px;
+}
+
+nav.primary a {
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  position: relative;
+  padding: 4px 0;
+}
+
+nav.primary a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: var(--brass);
+  transition: right 0.35s var(--ease);
+}
+
+nav.primary a:hover::after {
+  right: 0;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+@media (max-width: 980px) {
+  nav.primary {
+    display: none;
+  }
+
+  .nav-inner {
+    padding: 20px 24px;
+  }
+}

@@ -1,0 +1,65 @@
+.dept-scroller {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 6px;
+}
+
+.dept-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.dept-card {
+  flex: 0 0 340px;
+  background: var(--paper-2);
+  padding: 36px 32px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border-right: 1px solid var(--line);
+}
+
+.dept-card .tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.dept-card h3 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  margin-top: 60px;
+  line-height: 1.12;
+}
+
+.dept-card p {
+  color: var(--steel);
+  font-size: 13.5px;
+  margin-top: 14px;
+}
+
+.dept-card .icon {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  opacity: 0.85;
+}
+
+.dept-card .foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--steel);
+}

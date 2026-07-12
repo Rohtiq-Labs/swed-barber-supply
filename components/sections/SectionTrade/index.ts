@@ -1,0 +1,1 @@
+export { SectionTrade } from "./SectionTrade";

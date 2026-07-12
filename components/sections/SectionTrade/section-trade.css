@@ -1,0 +1,63 @@
+.trade {
+  padding: 130px 0;
+}
+
+.trade-box {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  padding: 80px 70px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.trade-box h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.08;
+}
+
+.trade-box p {
+  color: var(--steel);
+  margin-top: 18px;
+  max-width: 420px;
+}
+
+.trade-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.trade-form input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 2px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  outline: none;
+  color: var(--ink);
+  transition: border-color 0.3s;
+}
+
+.trade-form input:focus {
+  border-color: var(--ink);
+}
+
+.trade-form input::placeholder {
+  color: var(--steel);
+}
+
+.trade-form .btn-solid {
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .trade-box {
+    grid-template-columns: 1fr;
+    padding: 50px 28px;
+  }
+}
