@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Matte clay jar">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(200 140)">
+    <ellipse cx="120" cy="60" rx="90" ry="24" fill="#17181A"/>
+    <rect x="30" y="60" width="180" height="40" fill="#26282B"/>
+    <path d="M20 100h200v220c0 30-40 50-100 50s-100-20-100-50V100Z" fill="#17181A"/>
+    <ellipse cx="120" cy="100" rx="100" ry="20" fill="#26282B"/>
+    <text x="78" y="230" font-family="Libre Caslon Display, serif" font-size="28" fill="#CBA96B">CLAY</text>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">TEXTURE CLAY</text>
+</svg>

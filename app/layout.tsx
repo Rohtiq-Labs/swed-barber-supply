@@ -7,6 +7,8 @@ import {
 } from "next/font/google";
 
 import { SiteEffects } from "@/components/layout/SiteEffects";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 import { LocaleProvider } from "@/context/LocaleContext";
 
 import "./globals.css";
@@ -52,7 +54,11 @@ export default function RootLayout({
         className={`${inter.variable} ${libreCaslonDisplay.variable} ${libreCaslonText.variable} ${ibmPlexMono.variable}`}
       >
         <LocaleProvider>
-          <SiteEffects>{children}</SiteEffects>
+          <SiteEffects>
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </SiteEffects>
         </LocaleProvider>
       </body>
     </html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Replacement blade">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(150 220)">
+    <rect x="20" y="40" width="320" height="70" rx="8" fill="#17181A"/>
+    <rect x="36" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="64" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="92" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="120" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="148" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="176" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="204" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="232" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="260" y="20" width="18" height="40" fill="#CBA96B"/>
+    <rect x="288" y="20" width="18" height="40" fill="#CBA96B"/>
+    <circle cx="180" cy="75" r="10" fill="#8A6D3B"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">BLADE HEAD</text>
+</svg>

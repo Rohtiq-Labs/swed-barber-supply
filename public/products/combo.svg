@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Clipper and trimmer combo">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(130 120)">
+    <rect x="50" y="10" width="90" height="28" rx="3" fill="#17181A"/>
+    <rect x="40" y="38" width="110" height="240" rx="16" fill="#17181A"/>
+    <rect x="58" y="70" width="74" height="40" rx="4" fill="#26282B"/>
+    <circle cx="95" cy="150" r="9" fill="#8A6D3B"/>
+  </g>
+  <g transform="translate(340 150)">
+    <rect x="30" y="10" width="55" height="20" rx="2" fill="#17181A"/>
+    <rect x="26" y="30" width="64" height="230" rx="12" fill="#26282B"/>
+    <circle cx="58" cy="120" r="7" fill="#CBA96B"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">COMBO KIT</text>
+</svg>

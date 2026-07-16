@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Barber product">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(200 180)">
+    <circle cx="120" cy="120" r="90" stroke="#8A6D3B" stroke-width="2" fill="none"/>
+    <circle cx="120" cy="120" r="52" stroke="#17181A" stroke-width="1.5" fill="none"/>
+    <path d="M120 40 V200 M40 120 H200" stroke="#8A6D3B" stroke-width="1" stroke-dasharray="4 6" opacity="0.6"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">SB SUPPLY</text>
+</svg>

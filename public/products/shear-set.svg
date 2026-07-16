@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Shear set">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(100 100)" stroke="#17181A" stroke-width="8" stroke-linecap="round">
+    <circle cx="70" cy="320" r="32" fill="none"/>
+    <circle cx="180" cy="320" r="32" fill="none"/>
+    <path d="M70 290 L180 70"/>
+    <path d="M180 290 L70 70"/>
+    <circle cx="125" cy="185" r="10" fill="#8A6D3B" stroke="none"/>
+  </g>
+  <g transform="translate(320 140)" stroke="#545B62" stroke-width="7" stroke-linecap="round" opacity="0.85">
+    <circle cx="60" cy="280" r="28" fill="none"/>
+    <circle cx="150" cy="280" r="28" fill="none"/>
+    <path d="M60 254 L150 60"/>
+    <path d="M150 254 L60 60"/>
+    <circle cx="105" cy="160" r="8" fill="#CBA96B" stroke="none"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">SHEAR SET</text>
+</svg>

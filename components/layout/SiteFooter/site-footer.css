@@ -1,30 +1,32 @@
+/* Mobile-first footer */
+
 footer {
   background: var(--ink);
   color: var(--paper);
-  padding: 100px 0 40px;
+  padding: 64px 0 32px;
 }
 
 .foot-grid {
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
 .foot-grid h5 {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--brass-light);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .foot-grid a,
 .foot-grid p {
   display: block;
   color: var(--steel-l);
-  font-size: 13.5px;
-  margin-bottom: 11px;
+  font-size: 13px;
+  margin-bottom: 10px;
   transition: color 0.25s;
 }
 
@@ -34,33 +36,86 @@ footer {
 
 .foot-logo {
   font-family: var(--font-serif);
-  font-size: 26px;
-  margin-bottom: 16px;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
 .foot-tagline {
-  max-width: 260px;
+  max-width: 100%;
 }
 
 .foot-bottom {
   display: flex;
-  justify-content: space-between;
-  margin-top: 80px;
-  padding-top: 26px;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 48px;
+  padding-top: 22px;
   border-top: 1px solid var(--line-dark);
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--steel-l);
   letter-spacing: 0.05em;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 641px) {
+  footer {
+    padding: 80px 0 36px;
+  }
+
   .foot-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .foot-grid h5 {
+    font-size: 10.5px;
+    margin-bottom: 18px;
+  }
+
+  .foot-grid a,
+  .foot-grid p {
+    font-size: 13.5px;
+    margin-bottom: 11px;
+  }
+
+  .foot-logo {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .foot-tagline {
+    max-width: 260px;
   }
 
   .foot-bottom {
-    flex-direction: column;
-    gap: 10px;
+    margin-top: 60px;
+    font-size: 10.5px;
+  }
+}
+
+@media (min-width: 981px) {
+  footer {
+    padding: 100px 0 40px;
+  }
+
+  .foot-grid {
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 1fr;
+    gap: 40px;
+  }
+
+  .foot-logo {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .foot-grid h5 {
+    margin-bottom: 20px;
+  }
+
+  .foot-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding-top: 26px;
   }
 }

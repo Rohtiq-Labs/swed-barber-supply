@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Hair dryer">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(160 160)">
+    <ellipse cx="180" cy="100" rx="120" ry="70" fill="#17181A"/>
+    <ellipse cx="180" cy="100" rx="70" ry="40" fill="#26282B"/>
+    <rect x="280" y="80" width="90" height="40" rx="8" fill="#17181A"/>
+    <path d="M160 168v180c0 20 20 36 50 36s50-16 50-36V168" fill="#17181A"/>
+    <rect x="190" y="220" width="40" height="60" rx="4" fill="#8A6D3B"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">DRYER</text>
+</svg>

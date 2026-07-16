@@ -9,7 +9,7 @@ export const SectionAtelier = () => {
   const { atelier } = dictionary;
 
   return (
-    <div className="split reveal" aria-labelledby="atelier-heading">
+    <div className="split reveal" id="atelier" aria-labelledby="atelier-heading">
       <div className="visual">
         <svg viewBox="0 0 300 300" fill="none" aria-hidden="true">
           <g stroke="#CBA96B" strokeWidth="1">

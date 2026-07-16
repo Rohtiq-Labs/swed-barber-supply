@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Barber cape">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(120 120)">
+    <path d="M200 40c-40 0-70 20-90 40C80 60 40 90 20 140c40 20 100 40 180 40s140-20 180-40c-20-50-60-80-90-100-20-20-50-40-90-40Z" fill="#17181A"/>
+    <path d="M80 160c40 80 80 200 120 280h-40c-30-60-60-140-90-220Z" fill="#26282B"/>
+    <path d="M320 160c-40 80-80 200-120 280h40c30-60 60-140 90-220Z" fill="#26282B"/>
+    <ellipse cx="200" cy="70" rx="36" ry="18" fill="#F4F2EC"/>
+    <circle cx="200" cy="70" r="8" fill="#8A6D3B"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">CAPE</text>
+</svg>

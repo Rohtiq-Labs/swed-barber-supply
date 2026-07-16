@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Neck brush">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(250 90)">
+    <ellipse cx="70" cy="70" rx="58" ry="50" fill="#17181A"/>
+    <path d="M30 70 Q20 30 40 20 Q55 45 70 20 Q85 45 100 20 Q120 30 110 70" fill="#545B62"/>
+    <path d="M35 55 Q50 35 70 50 Q90 35 105 55" stroke="#9AA1A6" stroke-width="2" fill="none"/>
+    <rect x="50" y="110" width="40" height="220" rx="10" fill="#8A6D3B"/>
+    <rect x="56" y="300" width="28" height="50" rx="4" fill="#17181A"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">BRUSH</text>
+</svg>

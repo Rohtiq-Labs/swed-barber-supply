@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Anti-slip mat">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(100 180)">
+    <rect x="20" y="40" width="400" height="240" rx="16" fill="#17181A"/>
+    <rect x="48" y="70" width="344" height="180" rx="8" fill="#26282B"/>
+    <circle cx="100" cy="130" r="8" fill="#545B62"/>
+    <circle cx="160" cy="130" r="8" fill="#545B62"/>
+    <circle cx="220" cy="130" r="8" fill="#545B62"/>
+    <circle cx="280" cy="130" r="8" fill="#545B62"/>
+    <circle cx="340" cy="130" r="8" fill="#545B62"/>
+    <circle cx="100" cy="190" r="8" fill="#545B62"/>
+    <circle cx="160" cy="190" r="8" fill="#545B62"/>
+    <circle cx="220" cy="190" r="8" fill="#8A6D3B"/>
+    <circle cx="280" cy="190" r="8" fill="#545B62"/>
+    <circle cx="340" cy="190" r="8" fill="#545B62"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">ANTI-SLIP MAT</text>
+</svg>

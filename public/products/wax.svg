@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Hair wax tin">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(190 160)">
+    <ellipse cx="130" cy="70" rx="110" ry="30" fill="#17181A"/>
+    <rect x="20" y="70" width="220" height="180" fill="#17181A"/>
+    <ellipse cx="130" cy="250" rx="110" ry="30" fill="#26282B"/>
+    <ellipse cx="130" cy="70" rx="90" ry="18" fill="#8A6D3B"/>
+    <text x="85" y="175" font-family="Libre Caslon Display, serif" font-size="32" fill="#CBA96B">WAX</text>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">FIBER WAX</text>
+</svg>

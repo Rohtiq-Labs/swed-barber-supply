@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Hair spray">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(250 70)">
+    <rect x="60" y="10" width="20" height="45" fill="#17181A"/>
+    <circle cx="70" cy="10" r="10" fill="#8A6D3B"/>
+    <path d="M40 55h60l12 35H28l12-35Z" fill="#26282B"/>
+    <rect x="28" y="90" width="84" height="300" rx="10" fill="#17181A"/>
+    <rect x="42" y="130" width="56" height="120" rx="4" fill="#26282B"/>
+    <text x="48" y="200" font-family="IBM Plex Mono, monospace" font-size="11" fill="#CBA96B">SPRAY</text>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">HAIR SPRAY</text>
+</svg>

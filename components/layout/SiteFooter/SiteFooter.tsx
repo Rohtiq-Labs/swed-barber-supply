@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import "./site-footer.css";
 
 import { useLocale } from "@/context/LocaleContext";
@@ -18,21 +20,21 @@ export const SiteFooter = () => {
           </div>
           <div>
             <h5>{footer.catalogue}</h5>
-            <a href="#catalogue">{header.nav.elektronik}</a>
-            <a href="#catalogue">{header.nav.saxar}</a>
-            <a href="#catalogue">{header.nav.salong}</a>
-            <a href="#catalogue">{header.nav.produkter}</a>
+            <Link href="/shop/elektronik">{header.nav.elektronik}</Link>
+            <Link href="/shop/saxar-rakning">{header.nav.saxar}</Link>
+            <Link href="/shop/salongtillbehor">{header.nav.salong}</Link>
+            <Link href="/shop/produkter">{header.nav.produkter}</Link>
           </div>
           <div>
             <h5>{footer.company}</h5>
-            <a href="#">{footer.links.about}</a>
-            <a href="#">{footer.links.testimonials}</a>
-            <a href="#brands">{header.nav.brands}</a>
-            <a href="#deals">{header.nav.deals}</a>
+            <Link href="/#atelier">{footer.links.about}</Link>
+            <Link href="/brands">{header.nav.brands}</Link>
+            <Link href="/shop/hot-deals">{header.nav.deals}</Link>
+            <Link href="/shop">{header.nav.shop}</Link>
           </div>
           <div>
             <h5>{footer.trade}</h5>
-            <a href="#trade">{footer.links.openAccount}</a>
+            <Link href="/#trade">{footer.links.openAccount}</Link>
             <a href="#">{footer.links.shipping}</a>
             <a href="#">{footer.links.contact}</a>
           </div>

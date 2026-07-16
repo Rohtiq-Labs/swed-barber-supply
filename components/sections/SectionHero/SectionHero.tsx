@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import "./section-hero.css";
 
 import { useLocale } from "@/context/LocaleContext";
@@ -30,30 +32,27 @@ export const SectionHero = () => {
 
   return (
     <section className="hero" aria-labelledby="hero-heading">
-      <div className="wrap hero-grid">
-        <div>
-          <div className="eyebrow reveal">{hero.eyebrow}</div>
-          <h1 id="hero-heading" className="serif reveal">
-            {hero.title} <em>{hero.titleEmphasis}</em> {hero.titleEnd}
-          </h1>
-          <p className="hero-sub reveal">{hero.subtitle}</p>
-          <div className="hero-cta reveal">
-            <a href="#catalogue" className="btn-solid">
-              {hero.ctaCatalogue}
-            </a>
-            <a href="#trade" className="btn-line">
-              {hero.ctaTrade}
-            </a>
+      <div className="hero-stage">
+        <div className="wrap hero-grid">
+          <div className="hero-copy">
+            <div className="eyebrow reveal">{hero.eyebrow}</div>
+            <h1 id="hero-heading" className="serif reveal">
+              {hero.title} <em>{hero.titleEmphasis}</em> {hero.titleEnd}
+            </h1>
+            <p className="hero-sub reveal">{hero.subtitle}</p>
+            <div className="hero-cta reveal">
+              <Link href="/shop" className="btn-solid">
+                {hero.ctaCatalogue}
+              </Link>
+              <Link href="#trade" className="btn-line">
+                {hero.ctaTrade}
+              </Link>
+            </div>
+          </div>
+          <div className="hero-figure reveal" aria-hidden="true">
+            <HeroBlueprint />
           </div>
         </div>
-        <div className="hero-figure reveal">
-          <HeroBlueprint />
-        </div>
-      </div>
-      <div className="wrap hero-meta reveal">
-        <span>{hero.meta.address}</span>
-        <span>{hero.meta.trade}</span>
-        <span>{hero.meta.dispatch}</span>
       </div>
     </section>
   );

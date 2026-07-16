@@ -1,8 +1,13 @@
 "use client";
 
+import Link from "next/link";
+
 import "./section-catalogue.css";
 
 import { useLocale } from "@/context/LocaleContext";
+import { categories } from "@/data/categories";
+import { getProductsByCategory, getHotDeals } from "@/data/catalog";
+import { pickName } from "@/lib/catalog-i18n";
 
 const LedgerArrow = () => (
   <svg
@@ -17,8 +22,16 @@ const LedgerArrow = () => (
   </svg>
 );
 
+const categoryHrefs: Record<string, string> = {
+  elektronik: "/shop/elektronik",
+  "saxar-rakning": "/shop/saxar-rakning",
+  salongtillbehor: "/shop/salongtillbehor",
+  produkter: "/shop/produkter",
+  "hot-deals": "/shop/hot-deals",
+};
+
 export const SectionCatalogue = () => {
-  const { dictionary } = useLocale();
+  const { locale, dictionary } = useLocale();
   const { catalogue } = dictionary;
 
   return (
@@ -36,29 +49,36 @@ export const SectionCatalogue = () => {
         </div>
 
         <div className="ledger reveal">
-          {catalogue.rows.map((row, index) => (
-            <div
-              key={row.num}
-              className="ledger-row"
-              id={index === 4 ? "deals" : undefined}
-              role="link"
-              tabIndex={0}
-              onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  window.location.hash = "#";
-                }
-              }}
-              onClick={() => {
-                window.location.hash = "#";
-              }}
-            >
-              <span className="ledger-num mono">{row.num}</span>
-              <span className="ledger-title serif">{row.title}</span>
-              <span className="ledger-sub">{row.sub}</span>
-              <span className="ledger-count mono">{row.count}</span>
-              <LedgerArrow />
-            </div>
-          ))}
+          {categories.map((category) => {
+            const count =
+              category.slug === "hot-deals"
+                ? getHotDeals().length
+                : getProductsByCategory(category.slug).length;
+
+            return (
+              <Link
+                key={category.slug}
+                href={categoryHrefs[category.slug]}
+                className="ledger-row"
+                id={category.slug === "hot-deals" ? "deals" : undefined}
+              >
+                <span className="ledger-num mono">{category.num}</span>
+                <span className="ledger-title serif">{pickName(locale, category)}</span>
+                <span className="ledger-sub">
+                  {category.subcategories.length > 0
+                    ? category.subcategories
+                        .slice(0, 5)
+                        .map((sub) => pickName(locale, sub))
+                        .join(" · ")
+                    : dictionary.shop.hotDeals}
+                </span>
+                <span className="ledger-count mono">
+                  {count} {dictionary.shop.articles.toUpperCase()}
+                </span>
+                <LedgerArrow />
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

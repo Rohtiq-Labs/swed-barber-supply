@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Hair gel tube">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(250 90)">
+    <rect x="50" y="10" width="40" height="30" rx="4" fill="#17181A"/>
+    <path d="M30 40h80l10 40H20l10-40Z" fill="#26282B"/>
+    <rect x="20" y="80" width="100" height="300" rx="12" fill="#17181A"/>
+    <rect x="36" y="120" width="68" height="160" rx="6" fill="#8A6D3B" opacity="0.35"/>
+    <text x="42" y="210" font-family="IBM Plex Mono, monospace" font-size="16" fill="#CBA96B">GEL</text>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">HOLD GEL</text>
+</svg>

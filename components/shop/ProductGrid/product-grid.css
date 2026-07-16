@@ -1,0 +1,29 @@
+/* Mobile-first product grid */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+.product-grid--empty {
+  padding: 48px 0;
+  color: var(--steel);
+  font-size: 15px;
+}
+
+@media (min-width: 641px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid--empty {
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 981px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

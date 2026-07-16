@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Sea salt spray">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(245 80)">
+    <rect x="58" y="15" width="24" height="40" fill="#17181A"/>
+    <path d="M40 55h80l10 28H30l10-28Z" fill="#8A6D3B"/>
+    <rect x="35" y="83" width="90" height="290" rx="12" fill="#17181A"/>
+    <circle cx="80" cy="180" r="6" fill="#CBA96B"/>
+    <circle cx="100" cy="210" r="4" fill="#CBA96B"/>
+    <circle cx="60" cy="220" r="5" fill="#CBA96B"/>
+    <circle cx="90" cy="250" r="3" fill="#CBA96B"/>
+    <text x="48" y="320" font-family="IBM Plex Mono, monospace" font-size="12" fill="#9AA1A6">SALT</text>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">SEA SALT SPRAY</text>
+</svg>

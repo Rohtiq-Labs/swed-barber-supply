@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Shavette razor">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(120 250)">
+    <rect x="20" y="40" width="220" height="28" rx="4" fill="#17181A"/>
+    <path d="M240 30h140l20 24-20 24H240V30Z" fill="#9AA1A6"/>
+    <rect x="250" y="48" width="110" height="8" fill="#CBA96B"/>
+    <rect x="40" y="20" width="60" height="68" rx="6" fill="#26282B"/>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">SHAVETTE</text>
+</svg>

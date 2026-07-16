@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Beard oil">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(255 90)">
+    <rect x="50" y="10" width="30" height="50" rx="4" fill="#17181A"/>
+    <circle cx="65" cy="10" r="12" fill="#8A6D3B"/>
+    <path d="M35 60h60l8 24H27l8-24Z" fill="#26282B"/>
+    <rect x="30" y="84" width="70" height="260" rx="10" fill="#17181A"/>
+    <path d="M45 140c10 20 30 20 40 0" stroke="#CBA96B" stroke-width="2" fill="none"/>
+    <path d="M48 170c8 16 24 16 34 0" stroke="#CBA96B" stroke-width="2" fill="none"/>
+    <text x="40" y="250" font-family="IBM Plex Mono, monospace" font-size="12" fill="#9AA1A6">BEARD</text>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">BEARD OIL</text>
+</svg>

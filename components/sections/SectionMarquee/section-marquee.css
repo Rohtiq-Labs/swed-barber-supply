@@ -1,8 +1,10 @@
+/* Mobile-first marquee */
+
 .marquee-strip {
   background: var(--ink);
   color: var(--paper);
   overflow: hidden;
-  padding: 20px 0;
+  padding: 14px 0;
   border-top: 1px solid var(--line-dark);
   border-bottom: 1px solid var(--line-dark);
 }
@@ -15,14 +17,14 @@
 
 .marquee-track span {
   font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0 40px;
+  padding: 0 24px;
   color: var(--steel-l);
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
   white-space: nowrap;
 }
 
@@ -37,5 +39,31 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 641px) {
+  .marquee-strip {
+    padding: 18px 0;
+  }
+
+  .marquee-track span {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    padding: 0 32px;
+    gap: 32px;
+  }
+}
+
+@media (min-width: 981px) {
+  .marquee-strip {
+    padding: 20px 0;
+  }
+
+  .marquee-track span {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    padding: 0 40px;
+    gap: 40px;
   }
 }

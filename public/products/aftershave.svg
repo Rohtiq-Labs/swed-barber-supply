@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-label="Aftershave balm">
+  <rect width="640" height="640" fill="#F4F2EC"/>
+  <rect x="48" y="48" width="544" height="544" stroke="#DEDAD0" stroke-width="1"/>
+  <g transform="translate(220 130)">
+    <ellipse cx="100" cy="50" rx="70" ry="22" fill="#17181A"/>
+    <rect x="30" y="50" width="140" height="40" fill="#26282B"/>
+    <path d="M20 90h160v200c0 28-36 48-80 48s-80-20-80-48V90Z" fill="#17181A"/>
+    <ellipse cx="100" cy="90" rx="80" ry="18" fill="#8A6D3B"/>
+    <text x="55" y="200" font-family="IBM Plex Mono, monospace" font-size="14" fill="#CBA96B">AFTER</text>
+  </g>
+  <text x="48" y="600" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A6D3B" letter-spacing="2">AFTERSHAVE</text>
+</svg>

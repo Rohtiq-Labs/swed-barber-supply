@@ -1,8 +1,11 @@
 "use client";
 
+import Link from "next/link";
+
 import "./section-brands.css";
 
 import { useLocale } from "@/context/LocaleContext";
+import { featuredBrands } from "@/data/brands";
 
 export const SectionBrands = () => {
   const { dictionary } = useLocale();
@@ -22,10 +25,15 @@ export const SectionBrands = () => {
         </div>
       </div>
       <div className="brand-wall reveal" role="list">
-        {brands.names.map((name) => (
-          <div key={name} className="brand-cell" role="listitem">
-            <span>{name}</span>
-          </div>
+        {featuredBrands.map((brand) => (
+          <Link
+            key={brand.slug}
+            href={`/brands/${brand.slug}`}
+            className="brand-cell"
+            role="listitem"
+          >
+            <span>{brand.name}</span>
+          </Link>
         ))}
       </div>
     </section>

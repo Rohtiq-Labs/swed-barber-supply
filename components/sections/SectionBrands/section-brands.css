@@ -1,6 +1,8 @@
+/* Mobile-first brand wall */
+
 .brand-wall {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
 }
@@ -14,11 +16,13 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
 .brand-cell span {
   font-family: var(--font-serif);
-  font-size: 22px;
+  font-size: clamp(16px, 4.5vw, 22px);
   letter-spacing: 0.02em;
   transition:
     transform 0.4s var(--ease),
@@ -44,8 +48,18 @@
   transform: scale(1.06);
 }
 
-@media (max-width: 900px) {
+@media (min-width: 641px) {
   .brand-wall {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 981px) {
+  .brand-wall {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .brand-cell span {
+    font-size: 22px;
   }
 }
